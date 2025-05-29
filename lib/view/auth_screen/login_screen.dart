@@ -4,6 +4,7 @@ import 'package:todoapp/utils/p_color.dart';
 import 'package:todoapp/utils/p_text_style.dart';
 import 'package:todoapp/view/auth_screen/signup_screen.dart';
 import 'package:todoapp/view/widgets/common_button.dart';
+import 'package:todoapp/view/widgets/custom_tab_bar.dart';
 import 'package:todoapp/view/widgets/custom_textfield.dart';
 import 'package:todoapp/view/widgets/nav_bar.dart';
 
@@ -17,7 +18,7 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  bool Value = false;
+  bool value = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,10 +60,10 @@ class _LoginScreenState extends State<LoginScreen> {
           Row(
             children: [
               Checkbox(
-                value: Value,
+                value: value,
                 onChanged: (bool? newValue) {
                   setState(() {
-                    Value = newValue!;
+                    value = newValue!;
                   });
                 },
               ),
@@ -84,7 +85,7 @@ class _LoginScreenState extends State<LoginScreen> {
           CustomElevatedButton(
             text: Padding(
               padding: const EdgeInsets.only(left: 120.0),
-              child: Text( 'Sign In Now',style: TextStyle(color: Colors.white),),
+              child: Text('Sign In Now', style: TextStyle(color: Colors.white)),
             ),
             backroundColor: AppColors.primary,
             onPressed: () {},
@@ -95,7 +96,10 @@ class _LoginScreenState extends State<LoginScreen> {
           CustomElevatedButton(
             text: Padding(
               padding: const EdgeInsets.only(left: 6),
-              child: Text( 'Login With Facebook', style: TextStyle(color: Colors.white)),
+              child: Text(
+                'Login With Facebook',
+                style: TextStyle(color: Colors.white),
+              ),
             ),
             backroundColor: AppColors.primary,
             onPressed: () {},
@@ -109,7 +113,10 @@ class _LoginScreenState extends State<LoginScreen> {
           CustomElevatedButton(
             text: Padding(
               padding: const EdgeInsets.only(left: 10),
-              child: Text( 'Login With Google', style: TextStyle(color: Colors.black)),
+              child: Text(
+                'Login With Google',
+                style: TextStyle(color: Colors.black),
+              ),
             ),
             textColor: Colors.black,
             onPressed: () {},
@@ -130,7 +137,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 padding: const EdgeInsets.only(left: 105),
                 child: Text('I don\'t Have an account?'),
               ),
-              SizedBox(width: 3,),
+              SizedBox(width: 3),
               GestureDetector(
                 onTap: () {
                   Navigator.push(
@@ -148,10 +155,27 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ],
           ),
-          Container(
-            height: 10,
-            width: 10,
-            color: Colors.black,)
+
+          // GestureDetector(
+          //   onTap: (){
+          //     Navigator.push(context,
+          //     MaterialPageRoute(builder: (context)=> BottomNavBar()));
+          //   },
+          //   child: Container(
+          //     height: 50,
+          //     width: 50,
+          //     color: Colors.black,),
+          // )
+          TextButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => BottomNavBar()),
+              );
+            },
+            child: Text('bottomNav'),
+          ),
+          
           // ElevatedButton(
           //   onPressed: () {
           //     Navigator.push(

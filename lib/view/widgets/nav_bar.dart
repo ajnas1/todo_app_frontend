@@ -4,6 +4,7 @@ import 'package:todoapp/view/auth_screen/calendar_screen.dart';
 import 'package:todoapp/view/auth_screen/graph_screen.dart';
 import 'package:todoapp/view/auth_screen/home_screen.dart';
 import 'package:todoapp/view/auth_screen/profile_screen.dart';
+import 'package:todoapp/view/widgets/custom_tab_bar.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
@@ -22,7 +23,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     ProfileScreen(),
   ];
   
-  void OnItemTapped(int index){
+  void onItemTapped(int index){
     setState(() {
       selectedIndex = index;
     });
@@ -47,7 +48,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
         currentIndex: selectedIndex,
         fixedColor: Colors.amber,
         unselectedItemColor: Colors.black,
-        onTap: OnItemTapped,),
+        onTap: onItemTapped,),
       );
   }
 }

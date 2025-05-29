@@ -5,7 +5,6 @@ import 'package:todoapp/utils/p_text_style.dart';
 import 'package:todoapp/view/auth_screen/login_screen.dart';
 import 'package:todoapp/view/widgets/common_button.dart';
 import 'package:todoapp/view/widgets/custom_textfield.dart';
-import 'package:todoapp/view/widgets/nav_bar.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -17,7 +16,7 @@ class SignupScreen extends StatefulWidget {
 class _SignupScreenState extends State<SignupScreen> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  bool Value = false;
+  bool value = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,10 +70,10 @@ class _SignupScreenState extends State<SignupScreen> {
           Row(
             children: [
               Checkbox(
-                value: Value,
+                value: value,
                 onChanged: (bool? newValue) {
                   setState(() {
-                    Value = newValue!;
+                    value = newValue!;
                   });
                 },
               ),
